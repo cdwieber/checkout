@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kit extends Model
 {
-    protected $fillable=['name'];
+    protected $fillable = ['name'];
 
     public function items() {
     	return $this->hasMany('App\Item');
