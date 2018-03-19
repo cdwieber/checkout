@@ -162,6 +162,7 @@ return [
 
 	    //Adldap provider
 	    Adldap\Laravel\AdldapServiceProvider::class,
+	    Adldap\Laravel\AdldapAuthServiceProvider::class,
 
     ],
 
