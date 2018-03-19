@@ -14,14 +14,15 @@ class CreateSettingsTable extends Migration
     public function up()
     {
         Schema::create('settings', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('group_id');
+	        $table->engine = 'InnoDB';
+
+
+	        $table->increments('id');
+            $table->integer('group_id')->unsigned()->nullable();
             $table->string('key');
             $table->string('value');
             $table->string('name');
             $table->timestamps();
-
-            $table->foreign('group_id')->references('id')->on('setting_groups');
         });
     }
 

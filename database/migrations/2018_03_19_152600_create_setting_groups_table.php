@@ -14,7 +14,9 @@ class CreateSettingGroupsTable extends Migration
     public function up()
     {
         Schema::create('setting_groups', function (Blueprint $table) {
-            $table->unsignedInteger('id'); //We're going to manually add the ID to ensure we have control
+	        $table->engine = 'InnoDB';
+
+	        $table->integer('id')->unsigned()->unique(); //We're going to manually add the ID to ensure we have control
             $table->string('name');
             $table->timestamps();
         });
